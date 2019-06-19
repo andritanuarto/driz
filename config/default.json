@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb://localhost/driz",
+  "jwtSecret": "andrizsecret",
+  "githubClientId": "11fc65af8e3dbfcd24a1",
+  "githubSecret": "4d89a72cf3db983ca4f3fd7ee97a1cc02546d6b5"
+}
