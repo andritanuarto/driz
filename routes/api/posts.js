@@ -3,8 +3,9 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator/check');
 const Post = require('../../models/post');
 const User = require('../../models/user');
+const auth = require('../../middleware/auth');
 
-router.post('/',
+router.post('/', auth,
   [
     check('text', 'Content is required').not().isEmpty(),
     check('userId', 'Owner is required').not().isEmpty(),
