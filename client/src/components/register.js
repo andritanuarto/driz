@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+
+const Register = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const { name, email, password, confirmPassword } = formData;
+
+  const onChange = (e) => setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      console.log('not same');
+    } else {
+      console.log('good');
+    }
+  }
+
+  return (
+    <form className="register" onSubmit={e => onSubmit(e)}>
+      <input
+        onChange={e => onChange(e)}
+        type="text"
+        value={name}
+        name="name"
+        placeholder="Full Name"
+      />
+      <input
+        onChange={e => onChange(e)}
+        type="text"
+        value={email}
+        name="email"
+        placeholder="E-mail"
+      />
+      <input
+        onChange={e => onChange(e)}
+        type="text"
+        value={password}
+        name="password"
+        placeholder="Password"
+      />
+      <input
+        onChange={e => onChange(e)}
+        type="text"
+        value={confirmPassword}
+        name="confirmPassword"
+        placeholder="Confirm Password"
+      />
+    </form>
+  );
+}
+
+export default Register;

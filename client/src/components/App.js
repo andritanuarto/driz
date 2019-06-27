@@ -1,14 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../store';
-import Page from '../containers/page';
+import Public from '../containers/public';
+import Register from '../containers/register';
 
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Route exact path="/" render={() => <Page />} />
+        <Route exact path="/" render={() => <Public />} />
+        <Switch>
+          <Route exact path="/register" component={ Register } />
+          {/* <PrivateRoute exact path="/dashboard" component={ Dashboard } /> */}
+        </Switch>
       </Router>
     </Provider>
   );
