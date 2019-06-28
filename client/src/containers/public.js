@@ -2,10 +2,7 @@ import { connect } from 'react-redux';
 import Public from '../components/public';
 
 const mapStateToProps = (state) => {
-  return {
-    test: state.test,
-    test2: state.test2
-  };
+  return {};
 };
 
 const mapDispatchToProps = (dispatch) => {

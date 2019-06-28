@@ -1,3 +1,5 @@
+import { AUTH } from '../actions/types';
+
 import axios from 'axios';
 
 export const register = ({ name, email, password }) => async (dispatch) => {
@@ -11,10 +13,13 @@ export const register = ({ name, email, password }) => async (dispatch) => {
 
   try {
     const res = await axios.post('/api/users', body, config);
-    console.log(res, 'Okay Yo');
+    dispatch({
+      type: AUTH.REGISTER_SUCCESS,
+      payload: res.data
+    });
   } catch (err) {
-    const errors = err.response.data.errors;
-
-    console.log(errors);
+    dispatch({
+      type: AUTH.REGISTER_FAIL
+    });
   }
 }

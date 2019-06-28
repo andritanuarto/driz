@@ -4,6 +4,7 @@ import Register from '../components/register';
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.auth
   };
 };
 

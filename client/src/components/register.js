@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
-const Register = ({ register }) => {
+const Register = ({ register, auth }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +23,10 @@ const Register = ({ register }) => {
     } else {
       register({name, email, password});
     }
+  }
+
+  if (auth.isAuthenticated) {
+    return <Redirect to="/dashboard" />
   }
 
   return (
