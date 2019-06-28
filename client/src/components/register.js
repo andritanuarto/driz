@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Register = () => {
+const Register = ({ register }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,12 +20,12 @@ const Register = () => {
     if (password !== confirmPassword) {
       console.log('not same');
     } else {
-      console.log('good');
+      register({name, email, password});
     }
   }
 
   return (
-    <form className="register" onSubmit={e => onSubmit(e)}>
+    <form className="register" action="create-profile.html" onSubmit={e => onSubmit(e)}>
       <input
         onChange={e => onChange(e)}
         type="text"
@@ -54,6 +54,7 @@ const Register = () => {
         name="confirmPassword"
         placeholder="Confirm Password"
       />
+      <input type="submit" className="btn btn-primary" value="Register" />
     </form>
   );
 }

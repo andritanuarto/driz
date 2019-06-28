@@ -1,12 +1,18 @@
 import { connect } from 'react-redux';
+import { register } from '../actions/auth';
 import Register from '../components/register';
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    register: (userDetail) => {
+      dispatch(register(userDetail));
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
