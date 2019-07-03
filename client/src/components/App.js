@@ -5,6 +5,7 @@ import store from '../store';
 import Public from '../containers/public';
 import Register from '../containers/register';
 import Dashboard from '../containers/dashboard';
+import Login from '../containers/login';
 import PrivateRoute from './util/private-route';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path="/" render={() => <Public />} />
         <Switch>
           <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/dashboard" component={ Dashboard } />
         </Switch>
       </Router>
