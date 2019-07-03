@@ -9,19 +9,34 @@ const Login = ({ login, isAuthenticated }) => {
 
   const { email, password } = formData;
 
+  const onChange = e => setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    login(email, password);
+  }
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/dashboard" />
+  }
+
   return (
-    <form className="register" action="create-profile.html">
+    <form className="register" action="create-profile.html" onSubmit={e => onSubmit(e)}>
     <input
-      // onChange={e => onChange(e)}
+      onChange={e => onChange(e)}
       type="text"
-      // value={email}
+      value={email}
       name="email"
       placeholder="E-mail"
     />
     <input
-      // onChange={e => onChange(e)}
+      onChange={e => onChange(e)}
       type="text"
-      // value={password}
+      value={password}
       name="password"
       placeholder="Password"
     />
