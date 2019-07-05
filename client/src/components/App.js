@@ -11,16 +11,18 @@ import '../../dist/css/app.css';
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <Router>
-        <Route exact path="/" render={() => <Public />} />
-        <Switch>
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <PrivateRoute exact path="/dashboard" component={ Dashboard } />
-        </Switch>
-      </Router>
-    </Provider>
+    <div className="App">
+      <Provider store={store}>
+        <Router>
+          <Route exact path="/" render={() => <Public />} />
+          <Switch>
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/dashboard" component={ Dashboard } />
+          </Switch>
+        </Router>
+      </Provider>
+    </div>
   );
 }
 
