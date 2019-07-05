@@ -12,9 +12,6 @@ const Header = () => {
     dropdownOpen: !dropdownOpen
   });
 
-
-  console.log(headerState);
-
   return (
     <div className="header">
       <div className="driz"/>
