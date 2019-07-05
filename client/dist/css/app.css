@@ -4,7 +4,9 @@ body { font-size: 14px; color: #ffffff; font-family: "Helvetica", sans-serif; }
 
 button, select, input { outline: 0; }
 
-.header { height: 30px; background: #000000; }
+.header { height: 30px; background: #000000; padding: 0 15px; }
+
+.header .driz { float: left; }
 
 .header ul { list-style-type: none; margin: 0; padding: 0; }
 

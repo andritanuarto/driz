@@ -1,6 +1,10 @@
 .header {
   height: 30px;
   background: $color-black;
+  padding: 0 15px;
+  .driz {
+    float: left;
+  }
   ul {
     list-style-type: none;
     margin: 0;
