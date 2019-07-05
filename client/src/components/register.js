@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
+import Header from './header';
 
 const Register = ({ register, auth }) => {
   const [formData, setFormData] = useState({
@@ -30,37 +31,40 @@ const Register = ({ register, auth }) => {
   }
 
   return (
-    <form className="register" action="create-profile.html" onSubmit={e => onSubmit(e)}>
-      <input
-        onChange={e => onChange(e)}
-        type="text"
-        value={name}
-        name="name"
-        placeholder="Full Name"
-      />
-      <input
-        onChange={e => onChange(e)}
-        type="text"
-        value={email}
-        name="email"
-        placeholder="E-mail"
-      />
-      <input
-        onChange={e => onChange(e)}
-        type="text"
-        value={password}
-        name="password"
-        placeholder="Password"
-      />
-      <input
-        onChange={e => onChange(e)}
-        type="text"
-        value={confirmPassword}
-        name="confirmPassword"
-        placeholder="Confirm Password"
-      />
-      <input type="submit" className="btn btn-primary" value="Register" />
-    </form>
+    <Fragment>
+      <Header/>
+      <form className="register" action="create-profile.html" onSubmit={e => onSubmit(e)}>
+        <input
+          onChange={e => onChange(e)}
+          type="text"
+          value={name}
+          name="name"
+          placeholder="Full Name"
+        />
+        <input
+          onChange={e => onChange(e)}
+          type="text"
+          value={email}
+          name="email"
+          placeholder="E-mail"
+        />
+        <input
+          onChange={e => onChange(e)}
+          type="text"
+          value={password}
+          name="password"
+          placeholder="Password"
+        />
+        <input
+          onChange={e => onChange(e)}
+          type="text"
+          value={confirmPassword}
+          name="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <input type="submit" className="btn btn-primary" value="Register" />
+      </form>
+    </Fragment>
   );
 }
 

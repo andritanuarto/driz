@@ -8,6 +8,7 @@ import Dashboard from '../containers/dashboard';
 import Login from '../containers/login';
 import PrivateRoute from './util/private-route';
 import '../../dist/css/app.css';
+
 const App = () => {
   return (
     <Provider store={store}>
