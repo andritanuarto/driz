@@ -9,6 +9,7 @@ router.post('/', auth,
   [
     check('text', 'Content is required').not().isEmpty(),
     check('userId', 'Owner is required').not().isEmpty(),
+    check('summary', 'Summary is required').not().isEmpty()
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -17,7 +18,7 @@ router.post('/', auth,
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { text, userId } = req.body;
+    const { text, userId, summary } = req.body;
 
     try {
       const selectedUser = await User.findById(userId);
@@ -25,6 +26,7 @@ router.post('/', auth,
       if (selectedUser) {
         post = new Post({
           text,
+          summary,
           user: {
             userId: selectedUser._id,
             name: selectedUser.name,
