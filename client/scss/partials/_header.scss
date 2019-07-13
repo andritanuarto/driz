@@ -1,5 +1,5 @@
 .header {
-  border-bottom: solid 1px $color-mine-shaft;
+  border-bottom: solid 1px $color-silver;
   padding: 0 15px;
   position: relative;
   align-items: center;
@@ -7,6 +7,9 @@
   .driz {
     display: block;
     margin: 0 auto;
+  }
+  .material-icons {
+    color: $color-black;
   }
   ul {
     list-style-type: none;
