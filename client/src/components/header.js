@@ -1,4 +1,6 @@
 import React, { useState, Fragment } from 'react';
+import InlineSVG from 'svg-inline-react'
+import { SVG } from '../utils/svg'
 
 const Header = () => {
   const [headerState, setdropdown] = useState({
@@ -14,12 +16,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="driz"/>
-      <button onClick={dropdownToggle}>click</button>
-      <ul>
-        <li>Login</li>
-        <li>Register</li>
-      </ul>
+      <InlineSVG  className="driz" src={SVG.DRIZ} raw width="50" height="15"/>
 
     </div>
   );

@@ -5,6 +5,7 @@ const Public = () => {
   return (
     <div className="public">
       <Header/>
+      <div className="content"/>
     </div>
   );
 }
