@@ -17,6 +17,7 @@ export default function(state = initialState, action) {
         loading: false,
         user: payload
       }
+
     case AUTH.REGISTER_SUCCESS:
     case AUTH.LOGIN_SUCCESS:
       console.log(payload.token);
@@ -27,6 +28,7 @@ export default function(state = initialState, action) {
         loading: false,
         user: payload
       }
+
     case AUTH.REGISTER_FAIL:
     case AUTH.LOGIN_FAIL:
     case AUTH.AUTH_ERROR:
@@ -37,7 +39,8 @@ export default function(state = initialState, action) {
           isAuthenticated: false,
           loading: false
         }
-    default:
+
+        default:
       return state;
   }
 }

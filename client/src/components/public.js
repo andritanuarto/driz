@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import Header from './header';
 import axios from 'axios';
 
-const Public = () => {
+const Public = ({ fetchPosts }) => {
   useEffect(() => {
     axios.get('api/posts').then((response) => {
-      console.log(response.data);
+      fetchPosts(response.data);
     }).catch((error) => {
       console.log(error);
     });
