@@ -19,6 +19,6 @@ button, select, input { outline: 0; }
 
 .public .header { height: 50px; }
 
-.public .content { flex: 1; }
+.public .content { flex: 1; color: #000000; }
 
 /*# sourceMappingURL=app.css.map */

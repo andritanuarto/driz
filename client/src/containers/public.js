@@ -3,7 +3,9 @@ import Public from '../components/public';
 import { fetchPosts } from '../actions/home';
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    home: state.home
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
